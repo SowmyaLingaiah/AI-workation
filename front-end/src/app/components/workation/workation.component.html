@@ -1,0 +1,88 @@
+<div class="page-container">
+  <!-- Header -->
+  <header class="header">
+    <div class="header-content">
+      <span class="logo-text">WorkFlex</span>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main class="main-content">
+    <div class="table-container">
+      <h1 class="page-title">Workations</h1>
+
+      <div *ngIf="loading" class="loading">Loading workations...</div>
+      <div *ngIf="error" class="error">{{ error }}</div>
+
+      <table *ngIf="!loading && !error" class="workation-table">
+        <thead>
+          <tr>
+            <th (click)="sort('workationId')" class="sortable">
+              ID <span class="sort-icon">{{ getSortIcon('workationId') }}</span>
+            </th>
+            <th (click)="sort('employee')" class="sortable">
+              Employee <span class="sort-icon">{{ getSortIcon('employee') }}</span>
+            </th>
+            <th (click)="sort('origin')" class="sortable">
+              Origin <span class="sort-icon">{{ getSortIcon('origin') }}</span>
+            </th>
+            <th (click)="sort('destination')" class="sortable">
+              Destination <span class="sort-icon">{{ getSortIcon('destination') }}</span>
+            </th>
+            <th (click)="sort('start')" class="sortable">
+              Start <span class="sort-icon">{{ getSortIcon('start') }}</span>
+            </th>
+            <th (click)="sort('end')" class="sortable">
+              End <span class="sort-icon">{{ getSortIcon('end') }}</span>
+            </th>
+            <th (click)="sort('workingDays')" class="sortable">
+              Working Days <span class="sort-icon">{{ getSortIcon('workingDays') }}</span>
+            </th>
+            <th (click)="sort('risk')" class="sortable">
+              Risk <span class="sort-icon">{{ getSortIcon('risk') }}</span>
+            </th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let w of workations" class="table-row">
+            <td>{{ w.workationId }}</td>
+            <td>{{ w.employee }}</td>
+            <td>
+              <span class="country-cell">
+                <img
+                  [src]="getFlagUrl(w.origin)"
+                  [alt]="w.origin"
+                  class="flag-img"
+                  onerror="this.style.display='none'">
+                {{ w.origin }}
+              </span>
+            </td>
+            <td>
+              <span class="country-cell">
+                <img
+                  [src]="getFlagUrl(w.destination)"
+                  [alt]="w.destination"
+                  class="flag-img"
+                  onerror="this.style.display='none'">
+                {{ w.destination }}
+              </span>
+            </td>
+            <td>{{ w.start | date:'dd/MM/yyyy' }}</td>
+            <td>{{ w.end | date:'dd/MM/yyyy' }}</td>
+            <td>{{ w.workingDays }}</td>
+            <td>
+              <span class="risk-badge" [ngClass]="getRiskClass(w.risk)">
+                <img [src]="getRiskIcon(w.risk)" [alt]="w.risk" class="risk-icon">
+                {{ getRiskLabel(w.risk) }}
+              </span>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div *ngIf="!loading && workations.length === 0" class="empty">
+        No workations found.
+      </div>
+    </div>
+  </main>
+</div>
