@@ -59,7 +59,7 @@ GET /ai/workation?sortBy=employee&sortDir=asc
 
 - Workations loaded from CSV on startup
 - Stored in H2 in-memory database
-- REST API at `/work/workation`
+- REST API at `/ai/workation`
 - Sortable by every column
 - Date format: dd/MM/yyyy
 - Country flags (emoji)
