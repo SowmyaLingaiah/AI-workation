@@ -1,6 +1,6 @@
 # WorkFlex Workation Platform
 
-A full-stack workation management application built with **Spring Boot 3** and **Angular 17**.
+A full-stack workation management application built with **Spring Boot 4** and **Angular 17**.
 
 ---
 
@@ -8,7 +8,7 @@ A full-stack workation management application built with **Spring Boot 3** and *
 
 ```
 workflex-workation/
-├── backend/    # Spring Boot 3 REST API
+├── backend/    # Spring Boot 4 REST API
 └── frontend/   # Angular 17 SPA
 ```
 
@@ -50,7 +50,7 @@ App runs on: `http://localhost:4200`
 
 **Example:**
 ```
-GET /workflex/workation?sortBy=employee&sortDir=asc
+GET /wor/workation?sortBy=employee&sortDir=asc
 ```
 
 ---
@@ -59,7 +59,7 @@ GET /workflex/workation?sortBy=employee&sortDir=asc
 
 - Workations loaded from CSV on startup
 - Stored in H2 in-memory database
-- REST API at `/workflex/workation`
+- REST API at `/work/workation`
 - Sortable by every column
 - Date format: dd/MM/yyyy
 - Country flags (emoji)
@@ -83,7 +83,7 @@ Run via IntelliJ Maven panel → Lifecycle → test
 
 #Tech Stack
 
-**Backend:** Java 17, Spring Boot 3.2, Spring Data JPA, H2, OpenCSV, Springdoc OpenAPI
+**Backend:** Java 21, Spring Boot 4.1, Spring Data JPA, H2, OpenCSV, Springdoc OpenAPI
 
 **Frontend:** Angular 17, TypeScript, SCSS
 
