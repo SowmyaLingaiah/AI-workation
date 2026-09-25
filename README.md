@@ -1,4 +1,4 @@
-# WorkFlex Workation Platform
+# AI Workation Platform
 
 A full-stack workation management application built with **Spring Boot 4** and **Angular 17**.
 
@@ -7,7 +7,7 @@ A full-stack workation management application built with **Spring Boot 4** and *
 # Architecture
 
 ```
-workflex-workation/
+ai-workation/
 ├── backend/    # Spring Boot 4 REST API
 └── frontend/   # Angular 17 SPA
 ```
@@ -42,7 +42,7 @@ App runs on: `http://localhost:4200`
 
 | Method | Endpoint | Description |
 |--------|----------|-------------|
-| GET | /workflex/workation | Get all workations (sortable) |
+| GET | /ai/workation | Get all workations (sortable) |
 
 **Query Parameters:**
 - `sortBy` — column to sort by (workationId, employee, origin, destination, start, end, workingDays, risk)
@@ -50,7 +50,7 @@ App runs on: `http://localhost:4200`
 
 **Example:**
 ```
-GET /wor/workation?sortBy=employee&sortDir=asc
+GET /ai/workation?sortBy=employee&sortDir=asc
 ```
 
 ---
@@ -75,10 +75,6 @@ Run via IntelliJ Maven panel → Lifecycle → test
 
 ---
 
-#Screenshot
-
-[Workation Table](screenshot.png)
-
 ---
 
 #Tech Stack
@@ -89,4 +85,3 @@ Run via IntelliJ Maven panel → Lifecycle → test
 
 
 **Sowmya Lingaiah** — sowmya.lingaiah  
-Senior Full-Stack Software Engineer
